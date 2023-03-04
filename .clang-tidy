@@ -1,0 +1,19 @@
+# Disabled checks:
+# -clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling: nobody beside MSVC implements the _s functions this warning recommends to use.
+# -cppcoreguidelines-avoid-magic-numbers: too many false positives, especially in example programs we do.
+# -cppcoreguidelines-init-variables: unitialized variables are hard to avoid in C, without variable declaration in if/switch/etc. statements.
+# -cppcoreguidelines-avoid-non-const-global-variables: needed e.g. for signal handlers.
+
+Checks: >
+  bugprone-*,
+  clang-diagnostic-*,
+  clang-analyzer-*,
+  cppcoreguidelines-*,
+  modernize-*,
+  -clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -cppcoreguidelines-init-variables,
+  -cppcoreguidelines-avoid-non-const-global-variables
+
+FormatStyle: WebKit
+
